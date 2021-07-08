@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Character Recognition</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='app.css') }}">
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+      <div class="navbar-header">
+          <a class="navbar-brand" href="#">Character Recognition</a>
+      </div>
+  </nav>
+  <div class="container">
+    <form action = "/" method = "post" enctype="multipart/form-data">  
+      <label>
+        <label class="form-label" for="customFile">Default file input example</label>
+        <input type="file" name="file" class="form-control" />
+      </label>
+      <label>
+        <input type = "submit" value="Upload">  
+      </label>
+    </form>
+    
+    <div>
+      <img id='upload_img' class="border rounded mx-auto d-block" src="{{ image_file }}" alt="Test Image" />
+    </div>
+
+    {% if prediction != '' %}
+    <label id='predict'>
+      <h3>Prediction : {{ prediction }}</h3>  
+    </label>
+    {% endif %}
+  </div>
+
+</body>
+</html>

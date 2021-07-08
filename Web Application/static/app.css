@@ -1,0 +1,11 @@
+#upload_img {
+    border: 5px solid #555;
+    margin: 5px;
+    height: 350px;
+    width: 600px;
+    border-radius: 2%;
+}
+#predict {
+    margin: 5px;
+    font-size: xx-large;
+}
